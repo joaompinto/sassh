@@ -1,0 +1,23 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+from os.path import abspath, realpath, dirname, join, exists
+
+PROG_PACKAGE = "sassh"
+LAUNCH_DIR = abspath(sys.path[0])
+SOURCE_DIR = join(LAUNCH_DIR, "..", "sassh")
+
+# If we were invoked from a source directory add that as the
+# preferred module path ...
+if exists(join(SOURCE_DIR, "__init__.py")):
+    sys.path.insert(0, realpath(dirname(SOURCE_DIR)))
+    try:
+        from sassh.main import Main
+    finally:
+        del sys.path[0]
+else:
+    from sassh.main import Main
+
+SASSH = Main()
+SASSH.run()

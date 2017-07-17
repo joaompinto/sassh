@@ -1,0 +1,13 @@
+0.4.3
+    Prevented nested signal.SIGWINCH hangs
+
+0.4.1
+    Send password to clipboard when gtk is available
+    Removed '#' from the password generation
+    Increased connect timeout from 20s to 30s
+0.4
+    Added connection logging (when directory ~/sassh_logs is found)
+    Added -k to set key based authentication for connection
+    Strip empty 'record' field from connection data
+0.3
+    ChangeLog created
