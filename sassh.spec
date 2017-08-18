@@ -1,5 +1,5 @@
 %define name sassh
-%define version 0.4.3
+%define version 0.4.4
 %define release 0
 
 Summary: SysAdmin SSH connection manager/client
@@ -12,7 +12,7 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
-requires: python-paramiko, pygpgme, python-lxml
+requires: python-paramiko, pygpgme, python-lxml, python2-pyxdg
 
 %description
 SysAdmin SSH connection manager/client

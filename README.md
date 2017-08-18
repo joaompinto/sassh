@@ -17,6 +17,15 @@ SASSH comes to the rescue - it stores connection information (user/ip/password/s
 
 ## How to install
 
+### If you are using RHEL7/CentOS7 you can use the rpm available from the [releases](http://github.com/joaompinto/sassh/releases) page .
+
+### Install the dependencies
+The following packages must be installed using your distribution repositories:
+- pygpgme
+- python2-pyxdg
+- python2-paramiko
+- pip
+
 ### Install pip
 SASSH is a python2.x application, and you must have pip installed on your system.
 

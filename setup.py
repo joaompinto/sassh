@@ -5,7 +5,7 @@
 from distutils.core import setup
 
 setup(name='sassh',
-      version='0.4.3',
+      version='0.4.4',
       install_requirements= ['pygpgme', 'paramiko'],
       description='SysAdmin SSH connection manager/client',
       author='João Pinto',
