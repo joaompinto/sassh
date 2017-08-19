@@ -19,6 +19,13 @@ try:
 except ImportError:
     GTK_AVAILABLE = False
 
+EXTRA_HELP = """\
+While connected the following key binds are available:
+'CTRL-X' followed by 'p' to send the connection password (e.g. for sudo)
+; 'CTRL-X' followed by 'n' to generate new password (e.g. when password expired)
+"""
+
+
 class Main():
     """ Main class for the application """
 
@@ -30,7 +37,7 @@ class Main():
 
     def parse_args(self):
         """ Parse command line arguments """
-        parser = OptionParser()
+        parser = OptionParser(epilog=EXTRA_HELP)
         parser.add_option("-a", "--add-connection",
                           action="store", type="string", dest="add_connection",
                           help="Add connection to the configuration database")
@@ -88,7 +95,7 @@ class Main():
             print """
 sassh uses a GPG encrypted file to store connection passwords.
 You must generate a GPG keypair with "gpg --gen-key" .
-YOU SHOULD PROTECT THEY KEY WITH A PASSPHRASE .
+YOU SHOULD PROTECT THE KEY WITH A PASSPHRASE .
 Then set your shell's SASSH_GPG_PUB_KEY variable to to the public id as
 displayed from "gpg --list-keys", e.g: pub   4096R/7FD63AB0
     export SASSH_GPG_PUB_KEY="7FD63AB0"
